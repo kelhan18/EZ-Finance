@@ -1,0 +1,491 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		416D18D3219A358900049B27 /* EconomicNewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416D18D2219A358900049B27 /* EconomicNewsTableViewCell.swift */; };
+		416D18D5219A359700049B27 /* EconomicNewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416D18D4219A359700049B27 /* EconomicNewsTableViewController.swift */; };
+		416D18D7219A35AE00049B27 /* EconomicNewsInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416D18D6219A35AE00049B27 /* EconomicNewsInfoViewController.swift */; };
+		416D18D9219A371600049B27 /* EconomicNewsWebsiteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416D18D8219A371600049B27 /* EconomicNewsWebsiteViewController.swift */; };
+		416D190B21B5805600049B27 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416D190A21B5805600049B27 /* CalculatorViewController.swift */; };
+		416D190D21B5806200049B27 /* CalculatorResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416D190C21B5806200049B27 /* CalculatorResultsViewController.swift */; };
+		B74378EF21B70437007B6EE0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74378EE21B70437007B6EE0 /* HomeViewController.swift */; };
+		B74378F321B70B81007B6EE0 /* MyBudgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74378F221B70B81007B6EE0 /* MyBudgetViewController.swift */; };
+		B74378F521B70B8C007B6EE0 /* NewExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74378F421B70B8C007B6EE0 /* NewExpenseViewController.swift */; };
+		B74378F721B70B9D007B6EE0 /* DepositViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74378F621B70B9D007B6EE0 /* DepositViewController.swift */; };
+		B74378FB21B70BBB007B6EE0 /* BudgetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74378FA21B70BBB007B6EE0 /* BudgetTableViewCell.swift */; };
+		B743790121B71928007B6EE0 /* ExpenseDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B743790021B71928007B6EE0 /* ExpenseDetailsViewController.swift */; };
+		B743790521B72833007B6EE0 /* ExpensePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B743790421B72833007B6EE0 /* ExpensePhotoViewController.swift */; };
+		B743790721B7476F007B6EE0 /* ExpenseList.plist in Resources */ = {isa = PBXBuildFile; fileRef = B743790621B7476F007B6EE0 /* ExpenseList.plist */; };
+		B7B816AF219222CD0041E0BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B816AE219222CD0041E0BC /* AppDelegate.swift */; };
+		B7B816B6219222CD0041E0BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7B816B4219222CD0041E0BC /* Main.storyboard */; };
+		B7B816B8219222CD0041E0BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7B816B7219222CD0041E0BC /* Assets.xcassets */; };
+		B7B816BB219222CD0041E0BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7B816B9219222CD0041E0BC /* LaunchScreen.storyboard */; };
+		B7B816C421922D950041E0BC /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7B816C321922D950041E0BC /* WebKit.framework */; };
+		B7BF59AB21B749E400E94A8A /* Budget.plist in Resources */ = {isa = PBXBuildFile; fileRef = B7BF59AA21B749E400E94A8A /* Budget.plist */; };
+		B7BF59AD21B74EEB00E94A8A /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BF59AC21B74EEB00E94A8A /* StatisticsViewController.swift */; };
+		B7BF59AF21B74EFA00E94A8A /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BF59AE21B74EFA00E94A8A /* CategoryTableViewCell.swift */; };
+		B7BF59B121B7531E00E94A8A /* ExpenseByCategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BF59B021B7531E00E94A8A /* ExpenseByCategoryTableViewController.swift */; };
+		B7BF59B321B7532F00E94A8A /* ExpenseByCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BF59B221B7532F00E94A8A /* ExpenseByCategoryTableViewCell.swift */; };
+		B7BF59B621B7569100E94A8A /* ExpenseCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BF59B521B7569000E94A8A /* ExpenseCameraViewController.swift */; };
+		B7BF59B821B7569B00E94A8A /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BF59B721B7569B00E94A8A /* CameraViewController.swift */; };
+		B7BF59BA21B75AE300E94A8A /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BF59B921B75AE300E94A8A /* PreviewViewController.swift */; };
+		B7BF59BC21B75CAE00E94A8A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7BF59BB21B75CAE00E94A8A /* AVFoundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		416D18D2219A358900049B27 /* EconomicNewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EconomicNewsTableViewCell.swift; sourceTree = "<group>"; };
+		416D18D4219A359700049B27 /* EconomicNewsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EconomicNewsTableViewController.swift; sourceTree = "<group>"; };
+		416D18D6219A35AE00049B27 /* EconomicNewsInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EconomicNewsInfoViewController.swift; sourceTree = "<group>"; };
+		416D18D8219A371600049B27 /* EconomicNewsWebsiteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EconomicNewsWebsiteViewController.swift; sourceTree = "<group>"; };
+		416D190A21B5805600049B27 /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
+		416D190C21B5806200049B27 /* CalculatorResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorResultsViewController.swift; sourceTree = "<group>"; };
+		B74378EE21B70437007B6EE0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		B74378F221B70B81007B6EE0 /* MyBudgetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBudgetViewController.swift; sourceTree = "<group>"; };
+		B74378F421B70B8C007B6EE0 /* NewExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewExpenseViewController.swift; sourceTree = "<group>"; };
+		B74378F621B70B9D007B6EE0 /* DepositViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositViewController.swift; sourceTree = "<group>"; };
+		B74378FA21B70BBB007B6EE0 /* BudgetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetTableViewCell.swift; sourceTree = "<group>"; };
+		B743790021B71928007B6EE0 /* ExpenseDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseDetailsViewController.swift; sourceTree = "<group>"; };
+		B743790421B72833007B6EE0 /* ExpensePhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensePhotoViewController.swift; sourceTree = "<group>"; };
+		B743790621B7476F007B6EE0 /* ExpenseList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ExpenseList.plist; sourceTree = "<group>"; };
+		B7B816AB219222CD0041E0BC /* EZFinance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EZFinance.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7B816AE219222CD0041E0BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B7B816B5219222CD0041E0BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B7B816B7219222CD0041E0BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B7B816BA219222CD0041E0BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B7B816BC219222CD0041E0BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B7B816C321922D950041E0BC /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		B7BF59AA21B749E400E94A8A /* Budget.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Budget.plist; sourceTree = "<group>"; };
+		B7BF59AC21B74EEB00E94A8A /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
+		B7BF59AE21B74EFA00E94A8A /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
+		B7BF59B021B7531E00E94A8A /* ExpenseByCategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseByCategoryTableViewController.swift; sourceTree = "<group>"; };
+		B7BF59B221B7532F00E94A8A /* ExpenseByCategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseByCategoryTableViewCell.swift; sourceTree = "<group>"; };
+		B7BF59B521B7569000E94A8A /* ExpenseCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseCameraViewController.swift; sourceTree = "<group>"; };
+		B7BF59B721B7569B00E94A8A /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		B7BF59B921B75AE300E94A8A /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
+		B7BF59BB21B75CAE00E94A8A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B7B816A8219222CD0041E0BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B7BF59BC21B75CAE00E94A8A /* AVFoundation.framework in Frameworks */,
+				B7B816C421922D950041E0BC /* WebKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		416D18D0219A357600049B27 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B7BF59B421B7567400E94A8A /* Expense Camera */,
+				B74378ED21B70428007B6EE0 /* Home */,
+				416D18D1219A357D00049B27 /* Economic News */,
+				416D190921B5803F00049B27 /* 401K Calculator */,
+				B74378F121B70B55007B6EE0 /* My Budget */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		416D18D1219A357D00049B27 /* Economic News */ = {
+			isa = PBXGroup;
+			children = (
+				416D18D2219A358900049B27 /* EconomicNewsTableViewCell.swift */,
+				416D18D4219A359700049B27 /* EconomicNewsTableViewController.swift */,
+				416D18D6219A35AE00049B27 /* EconomicNewsInfoViewController.swift */,
+				416D18D8219A371600049B27 /* EconomicNewsWebsiteViewController.swift */,
+			);
+			path = "Economic News";
+			sourceTree = "<group>";
+		};
+		416D190921B5803F00049B27 /* 401K Calculator */ = {
+			isa = PBXGroup;
+			children = (
+				416D190A21B5805600049B27 /* CalculatorViewController.swift */,
+				416D190C21B5806200049B27 /* CalculatorResultsViewController.swift */,
+			);
+			path = "401K Calculator";
+			sourceTree = "<group>";
+		};
+		B74378ED21B70428007B6EE0 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B74378EE21B70437007B6EE0 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		B74378F121B70B55007B6EE0 /* My Budget */ = {
+			isa = PBXGroup;
+			children = (
+				B74378F221B70B81007B6EE0 /* MyBudgetViewController.swift */,
+				B74378F421B70B8C007B6EE0 /* NewExpenseViewController.swift */,
+				B74378F621B70B9D007B6EE0 /* DepositViewController.swift */,
+				B74378FA21B70BBB007B6EE0 /* BudgetTableViewCell.swift */,
+				B743790021B71928007B6EE0 /* ExpenseDetailsViewController.swift */,
+				B743790421B72833007B6EE0 /* ExpensePhotoViewController.swift */,
+				B7BF59AC21B74EEB00E94A8A /* StatisticsViewController.swift */,
+				B7BF59AE21B74EFA00E94A8A /* CategoryTableViewCell.swift */,
+				B7BF59B021B7531E00E94A8A /* ExpenseByCategoryTableViewController.swift */,
+				B7BF59B221B7532F00E94A8A /* ExpenseByCategoryTableViewCell.swift */,
+			);
+			path = "My Budget";
+			sourceTree = "<group>";
+		};
+		B7B816A2219222CD0041E0BC = {
+			isa = PBXGroup;
+			children = (
+				B7B816AD219222CD0041E0BC /* EZFinance */,
+				B7B816AC219222CD0041E0BC /* Products */,
+				B7B816C221922D950041E0BC /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B7B816AC219222CD0041E0BC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B7B816AB219222CD0041E0BC /* EZFinance.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B7B816AD219222CD0041E0BC /* EZFinance */ = {
+			isa = PBXGroup;
+			children = (
+				B7B816AE219222CD0041E0BC /* AppDelegate.swift */,
+				416D18D0219A357600049B27 /* View Controllers */,
+				B7B816B4219222CD0041E0BC /* Main.storyboard */,
+				B7B816B7219222CD0041E0BC /* Assets.xcassets */,
+				B7B816B9219222CD0041E0BC /* LaunchScreen.storyboard */,
+				B7B816BC219222CD0041E0BC /* Info.plist */,
+				B743790621B7476F007B6EE0 /* ExpenseList.plist */,
+				B7BF59AA21B749E400E94A8A /* Budget.plist */,
+			);
+			path = EZFinance;
+			sourceTree = "<group>";
+		};
+		B7B816C221922D950041E0BC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B7BF59BB21B75CAE00E94A8A /* AVFoundation.framework */,
+				B7B816C321922D950041E0BC /* WebKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B7BF59B421B7567400E94A8A /* Expense Camera */ = {
+			isa = PBXGroup;
+			children = (
+				B7BF59B521B7569000E94A8A /* ExpenseCameraViewController.swift */,
+				B7BF59B721B7569B00E94A8A /* CameraViewController.swift */,
+				B7BF59B921B75AE300E94A8A /* PreviewViewController.swift */,
+			);
+			path = "Expense Camera";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B7B816AA219222CD0041E0BC /* EZFinance */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B7B816BF219222CD0041E0BC /* Build configuration list for PBXNativeTarget "EZFinance" */;
+			buildPhases = (
+				B7B816A7219222CD0041E0BC /* Sources */,
+				B7B816A8219222CD0041E0BC /* Frameworks */,
+				B7B816A9219222CD0041E0BC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EZFinance;
+			productName = EZFinance;
+			productReference = B7B816AB219222CD0041E0BC /* EZFinance.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B7B816A3219222CD0041E0BC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1000;
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = "Anthony Medovar";
+				TargetAttributes = {
+					B7B816AA219222CD0041E0BC = {
+						CreatedOnToolsVersion = 10.0;
+					};
+				};
+			};
+			buildConfigurationList = B7B816A6219222CD0041E0BC /* Build configuration list for PBXProject "EZFinance" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B7B816A2219222CD0041E0BC;
+			productRefGroup = B7B816AC219222CD0041E0BC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B7B816AA219222CD0041E0BC /* EZFinance */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B7B816A9219222CD0041E0BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B7B816BB219222CD0041E0BC /* LaunchScreen.storyboard in Resources */,
+				B743790721B7476F007B6EE0 /* ExpenseList.plist in Resources */,
+				B7B816B8219222CD0041E0BC /* Assets.xcassets in Resources */,
+				B7BF59AB21B749E400E94A8A /* Budget.plist in Resources */,
+				B7B816B6219222CD0041E0BC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B7B816A7219222CD0041E0BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B74378F721B70B9D007B6EE0 /* DepositViewController.swift in Sources */,
+				B7BF59B821B7569B00E94A8A /* CameraViewController.swift in Sources */,
+				B7BF59BA21B75AE300E94A8A /* PreviewViewController.swift in Sources */,
+				416D18D9219A371600049B27 /* EconomicNewsWebsiteViewController.swift in Sources */,
+				B743790521B72833007B6EE0 /* ExpensePhotoViewController.swift in Sources */,
+				B74378F321B70B81007B6EE0 /* MyBudgetViewController.swift in Sources */,
+				B7BF59B121B7531E00E94A8A /* ExpenseByCategoryTableViewController.swift in Sources */,
+				B7BF59B321B7532F00E94A8A /* ExpenseByCategoryTableViewCell.swift in Sources */,
+				416D18D7219A35AE00049B27 /* EconomicNewsInfoViewController.swift in Sources */,
+				B7B816AF219222CD0041E0BC /* AppDelegate.swift in Sources */,
+				B7BF59AD21B74EEB00E94A8A /* StatisticsViewController.swift in Sources */,
+				B7BF59AF21B74EFA00E94A8A /* CategoryTableViewCell.swift in Sources */,
+				B743790121B71928007B6EE0 /* ExpenseDetailsViewController.swift in Sources */,
+				B74378EF21B70437007B6EE0 /* HomeViewController.swift in Sources */,
+				416D18D5219A359700049B27 /* EconomicNewsTableViewController.swift in Sources */,
+				416D190B21B5805600049B27 /* CalculatorViewController.swift in Sources */,
+				416D18D3219A358900049B27 /* EconomicNewsTableViewCell.swift in Sources */,
+				B74378F521B70B8C007B6EE0 /* NewExpenseViewController.swift in Sources */,
+				416D190D21B5806200049B27 /* CalculatorResultsViewController.swift in Sources */,
+				B7BF59B621B7569100E94A8A /* ExpenseCameraViewController.swift in Sources */,
+				B74378FB21B70BBB007B6EE0 /* BudgetTableViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B7B816B4219222CD0041E0BC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B7B816B5219222CD0041E0BC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B7B816B9219222CD0041E0BC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B7B816BA219222CD0041E0BC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B7B816BD219222CD0041E0BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B7B816BE219222CD0041E0BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B7B816C0219222CD0041E0BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U3465V32BF;
+				INFOPLIST_FILE = EZFinance/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.anthonymedovar.EZFinance;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		B7B816C1219222CD0041E0BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U3465V32BF;
+				INFOPLIST_FILE = EZFinance/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.anthonymedovar.EZFinance;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B7B816A6219222CD0041E0BC /* Build configuration list for PBXProject "EZFinance" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B7B816BD219222CD0041E0BC /* Debug */,
+				B7B816BE219222CD0041E0BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B7B816BF219222CD0041E0BC /* Build configuration list for PBXNativeTarget "EZFinance" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B7B816C0219222CD0041E0BC /* Debug */,
+				B7B816C1219222CD0041E0BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B7B816A3219222CD0041E0BC /* Project object */;
+}
