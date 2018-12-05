@@ -13,6 +13,12 @@
 		416D18D9219A371600049B27 /* EconomicNewsWebsiteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416D18D8219A371600049B27 /* EconomicNewsWebsiteViewController.swift */; };
 		416D190B21B5805600049B27 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416D190A21B5805600049B27 /* CalculatorViewController.swift */; };
 		416D190D21B5806200049B27 /* CalculatorResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416D190C21B5806200049B27 /* CalculatorResultsViewController.swift */; };
+		419A9B2821B87A1E00083B1D /* MyStocksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419A9B2321B87A1D00083B1D /* MyStocksTableViewController.swift */; };
+		419A9B2921B87A1E00083B1D /* MyStockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419A9B2421B87A1D00083B1D /* MyStockViewController.swift */; };
+		419A9B2A21B87A1E00083B1D /* StockSearchedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419A9B2521B87A1E00083B1D /* StockSearchedViewController.swift */; };
+		419A9B2B21B87A1E00083B1D /* MyStocksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419A9B2621B87A1E00083B1D /* MyStocksTableViewCell.swift */; };
+		419A9B2C21B87A1E00083B1D /* StockSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419A9B2721B87A1E00083B1D /* StockSearchViewController.swift */; };
+		419A9B3021B87B2B00083B1D /* Stocks.plist in Resources */ = {isa = PBXBuildFile; fileRef = 419A9B2F21B87B2B00083B1D /* Stocks.plist */; };
 		B74378EF21B70437007B6EE0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74378EE21B70437007B6EE0 /* HomeViewController.swift */; };
 		B74378F321B70B81007B6EE0 /* MyBudgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74378F221B70B81007B6EE0 /* MyBudgetViewController.swift */; };
 		B74378F521B70B8C007B6EE0 /* NewExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74378F421B70B8C007B6EE0 /* NewExpenseViewController.swift */; };
@@ -44,6 +50,12 @@
 		416D18D8219A371600049B27 /* EconomicNewsWebsiteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EconomicNewsWebsiteViewController.swift; sourceTree = "<group>"; };
 		416D190A21B5805600049B27 /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
 		416D190C21B5806200049B27 /* CalculatorResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorResultsViewController.swift; sourceTree = "<group>"; };
+		419A9B2321B87A1D00083B1D /* MyStocksTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyStocksTableViewController.swift; sourceTree = "<group>"; };
+		419A9B2421B87A1D00083B1D /* MyStockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyStockViewController.swift; sourceTree = "<group>"; };
+		419A9B2521B87A1E00083B1D /* StockSearchedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockSearchedViewController.swift; sourceTree = "<group>"; };
+		419A9B2621B87A1E00083B1D /* MyStocksTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyStocksTableViewCell.swift; sourceTree = "<group>"; };
+		419A9B2721B87A1E00083B1D /* StockSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockSearchViewController.swift; sourceTree = "<group>"; };
+		419A9B2F21B87B2B00083B1D /* Stocks.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Stocks.plist; sourceTree = "<group>"; };
 		B74378EE21B70437007B6EE0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B74378F221B70B81007B6EE0 /* MyBudgetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBudgetViewController.swift; sourceTree = "<group>"; };
 		B74378F421B70B8C007B6EE0 /* NewExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewExpenseViewController.swift; sourceTree = "<group>"; };
@@ -86,6 +98,7 @@
 		416D18D0219A357600049B27 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				419A9B2221B879FC00083B1D /* Stocks */,
 				B7BF59B421B7567400E94A8A /* Expense Camera */,
 				B74378ED21B70428007B6EE0 /* Home */,
 				416D18D1219A357D00049B27 /* Economic News */,
@@ -113,6 +126,18 @@
 				416D190C21B5806200049B27 /* CalculatorResultsViewController.swift */,
 			);
 			path = "401K Calculator";
+			sourceTree = "<group>";
+		};
+		419A9B2221B879FC00083B1D /* Stocks */ = {
+			isa = PBXGroup;
+			children = (
+				419A9B2621B87A1E00083B1D /* MyStocksTableViewCell.swift */,
+				419A9B2321B87A1D00083B1D /* MyStocksTableViewController.swift */,
+				419A9B2421B87A1D00083B1D /* MyStockViewController.swift */,
+				419A9B2521B87A1E00083B1D /* StockSearchedViewController.swift */,
+				419A9B2721B87A1E00083B1D /* StockSearchViewController.swift */,
+			);
+			path = Stocks;
 			sourceTree = "<group>";
 		};
 		B74378ED21B70428007B6EE0 /* Home */ = {
@@ -168,6 +193,7 @@
 				B7B816BC219222CD0041E0BC /* Info.plist */,
 				B743790621B7476F007B6EE0 /* ExpenseList.plist */,
 				B7BF59AA21B749E400E94A8A /* Budget.plist */,
+				419A9B2F21B87B2B00083B1D /* Stocks.plist */,
 			);
 			path = EZFinance;
 			sourceTree = "<group>";
@@ -253,6 +279,7 @@
 				B743790721B7476F007B6EE0 /* ExpenseList.plist in Resources */,
 				B7B816B8219222CD0041E0BC /* Assets.xcassets in Resources */,
 				B7BF59AB21B749E400E94A8A /* Budget.plist in Resources */,
+				419A9B3021B87B2B00083B1D /* Stocks.plist in Resources */,
 				B7B816B6219222CD0041E0BC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,12 +292,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				B74378F721B70B9D007B6EE0 /* DepositViewController.swift in Sources */,
+				419A9B2C21B87A1E00083B1D /* StockSearchViewController.swift in Sources */,
 				B7BF59B821B7569B00E94A8A /* CameraViewController.swift in Sources */,
+				419A9B2A21B87A1E00083B1D /* StockSearchedViewController.swift in Sources */,
 				B7BF59BA21B75AE300E94A8A /* PreviewViewController.swift in Sources */,
 				416D18D9219A371600049B27 /* EconomicNewsWebsiteViewController.swift in Sources */,
 				B743790521B72833007B6EE0 /* ExpensePhotoViewController.swift in Sources */,
 				B74378F321B70B81007B6EE0 /* MyBudgetViewController.swift in Sources */,
 				B7BF59B121B7531E00E94A8A /* ExpenseByCategoryTableViewController.swift in Sources */,
+				419A9B2921B87A1E00083B1D /* MyStockViewController.swift in Sources */,
 				B7BF59B321B7532F00E94A8A /* ExpenseByCategoryTableViewCell.swift in Sources */,
 				416D18D7219A35AE00049B27 /* EconomicNewsInfoViewController.swift in Sources */,
 				B7B816AF219222CD0041E0BC /* AppDelegate.swift in Sources */,
@@ -280,10 +310,12 @@
 				B74378EF21B70437007B6EE0 /* HomeViewController.swift in Sources */,
 				416D18D5219A359700049B27 /* EconomicNewsTableViewController.swift in Sources */,
 				416D190B21B5805600049B27 /* CalculatorViewController.swift in Sources */,
+				419A9B2821B87A1E00083B1D /* MyStocksTableViewController.swift in Sources */,
 				416D18D3219A358900049B27 /* EconomicNewsTableViewCell.swift in Sources */,
 				B74378F521B70B8C007B6EE0 /* NewExpenseViewController.swift in Sources */,
 				416D190D21B5806200049B27 /* CalculatorResultsViewController.swift in Sources */,
 				B7BF59B621B7569100E94A8A /* ExpenseCameraViewController.swift in Sources */,
+				419A9B2B21B87A1E00083B1D /* MyStocksTableViewCell.swift in Sources */,
 				B74378FB21B70BBB007B6EE0 /* BudgetTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IBM</key>
+	<array>
+		<string>0</string>
+		<string>7</string>
+		<string>851.20</string>
+	</array>
+	<key>AAPL</key>
+	<array>
+		<string>Apple Inc.</string>
+		<string>5</string>
+		<string>883.20</string>
+	</array>
+</dict>
+</plist>
