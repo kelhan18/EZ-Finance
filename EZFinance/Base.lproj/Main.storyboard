@@ -689,7 +689,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Employer Match %:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GZh-1X-fli">
                                 <rect key="frame" x="5" y="391" width="178" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="178" id="0lx-N9-CGg"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="178" id="0lx-N9-CGg"/>
                                     <constraint firstAttribute="height" constant="30" id="ojK-jb-hg4"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -745,7 +745,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Qoh-IR-6U3">
                                 <rect key="frame" x="186" y="281" width="127" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="127" id="2QT-wo-jLU"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="127" id="2QT-wo-jLU"/>
                                     <constraint firstAttribute="height" constant="30" id="rKU-dB-MPD"/>
                                 </constraints>
                                 <nil key="textColor"/>
@@ -871,7 +871,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$14,025" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wwp-fy-zLQ">
                                 <rect key="frame" x="16" y="120" width="288" height="73"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="288" id="2yj-FS-csb"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="288" id="2yj-FS-csb"/>
                                     <constraint firstAttribute="height" constant="73" id="tnk-wl-ff8"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
@@ -1614,7 +1614,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HlX-kI-roT">
                                                     <rect key="frame" x="15" y="5" width="255" height="31"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="255" id="43k-jS-qtU"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="255" id="43k-jS-qtU"/>
                                                         <constraint firstAttribute="height" constant="31" id="JeY-rm-am4"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -2362,17 +2362,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mBT-ZV-pFd">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mBT-ZV-pFd">
                                 <rect key="frame" x="16" y="465" width="288" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="BLE-m3-hON"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="288" id="E6B-sv-TDb"/>
+                                </constraints>
                                 <state key="normal" title="Create New Expense with Image"/>
                                 <connections>
                                     <action selector="newExpenseTapped:" destination="F23-Gh-4qm" eventType="touchUpInside" id="t1T-V4-z17"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="618-fe-MyL">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="618-fe-MyL">
                                 <rect key="frame" x="16" y="427" width="288" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="288" id="TEx-RT-toW"/>
+                                    <constraint firstAttribute="height" constant="30" id="gj0-tO-muZ"/>
+                                </constraints>
                                 <state key="normal" title="Select Picture of Expense"/>
                                 <connections>
                                     <action selector="selectPictureTapped:" destination="F23-Gh-4qm" eventType="touchUpInside" id="nxj-s4-Orz"/>
@@ -2389,7 +2395,15 @@
                         <constraints>
                             <constraint firstItem="sZU-yh-kCr" firstAttribute="trailing" secondItem="WfI-Wd-IVo" secondAttribute="trailing" id="1R4-qn-lh0"/>
                             <constraint firstItem="sZU-yh-kCr" firstAttribute="top" secondItem="WfI-Wd-IVo" secondAttribute="top" id="3vX-hZ-8RQ"/>
+                            <constraint firstItem="WfI-Wd-IVo" firstAttribute="trailing" secondItem="618-fe-MyL" secondAttribute="trailing" constant="16" id="CIR-VF-ovo"/>
                             <constraint firstItem="sZU-yh-kCr" firstAttribute="leading" secondItem="WfI-Wd-IVo" secondAttribute="leading" id="ERG-pK-UGX"/>
+                            <constraint firstItem="618-fe-MyL" firstAttribute="top" secondItem="sZU-yh-kCr" secondAttribute="bottom" constant="43" id="J3O-am-GWg"/>
+                            <constraint firstItem="618-fe-MyL" firstAttribute="leading" secondItem="WfI-Wd-IVo" secondAttribute="leading" constant="16" id="Lze-J3-uyt"/>
+                            <constraint firstItem="mBT-ZV-pFd" firstAttribute="leading" secondItem="WfI-Wd-IVo" secondAttribute="leading" constant="16" id="MP3-xa-8wo"/>
+                            <constraint firstItem="WfI-Wd-IVo" firstAttribute="trailing" secondItem="mBT-ZV-pFd" secondAttribute="trailing" constant="16" id="OU4-OL-6cm"/>
+                            <constraint firstItem="618-fe-MyL" firstAttribute="centerX" secondItem="BHo-TV-XCi" secondAttribute="centerX" id="Rm2-oc-wdi"/>
+                            <constraint firstItem="mBT-ZV-pFd" firstAttribute="top" secondItem="618-fe-MyL" secondAttribute="bottom" constant="8" id="jFk-8d-LSx"/>
+                            <constraint firstItem="mBT-ZV-pFd" firstAttribute="centerX" secondItem="BHo-TV-XCi" secondAttribute="centerX" id="t65-o8-2E8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="WfI-Wd-IVo"/>
                     </view>
