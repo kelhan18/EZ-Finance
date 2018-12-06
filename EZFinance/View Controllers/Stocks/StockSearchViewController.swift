@@ -9,19 +9,197 @@
 import UIKit
 
 class StockSearchViewController: UIViewController {
-
+    
+    @IBOutlet var leftArrowBlack: UIImageView!
+    @IBOutlet var rightArrowBlack: UIImageView!
+    @IBOutlet var scrollMenu: UIScrollView!
+    
+    var stockSymbols = [String]()
+    
+    // Other properties (instance variables) and their initializations
+    let kScrollMenuHeight: CGFloat = 81.0
+    var selectedStock = ""
+    
+    //    let backgroundColorToUse = UIColor(red: 0.6, green: 0.8, blue: 1.0, alpha: 1.0)
+    
+    // Obtain the object reference to the App Delegate object
+    let applicationDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        /*
+         allKeys returns a new array containing the dictionary’s keys as of type AnyObject.
+         Therefore, typecast the AnyObject type keys to be of type String.
+         The keys in the array are *unordered*; therefore, they need to be sorted.
+         */
+        stockSymbols = applicationDelegate.dict_MyStocks.allKeys as! [String]
+        
+        // Sort the stock symbols within itself in alphabetical order
+        stockSymbols.sort { $0 < $1 }
+        
+        print(stockSymbols)
         // Do any additional setup after loading the view.
+        
+        //        self.view.backgroundColor = UIColor.white
+        //        leftArrowBlack.backgroundColor = backgroundColorToUse
+        //        rightArrowBlack.backgroundColor = backgroundColorToUse
+        //        scrollMenu.backgroundColor = backgroundColorToUse
+        
+        // Instantiate a mutable array to hold the menu buttons to be created
+        var listOfMenuButtons = [UIButton]()
+        
+        for i in 0 ..< stockSymbols.count {
+            
+            // Instantiate a button to be placed within the horizontally scrollable menu
+            let scrollMenuButton = UIButton(type: UIButton.ButtonType.custom)
+            
+            // Obtain the title (i.e., stock symbol) to be displayed on the button
+            let buttonTitle = "\(stockSymbols[i])"
+            
+            // The button width and height in points will depend on its font style and size
+            let buttonTitleFont = UIFont(name: "Helvetica", size: 16.0)
+            
+            // Set the font of the button title label text
+            scrollMenuButton.titleLabel?.font = buttonTitleFont
+            
+            // Compute the size of the button title in points
+            let buttonTitleSize: CGSize = (buttonTitle as NSString).size(withAttributes: [NSAttributedString.Key.font:buttonTitleFont!])
+            
+            let titleTextWidth = buttonTitleSize.width
+            //            let logoImageWidth = autoMakerLogo!.size.width
+            
+            let buttonWidth: CGFloat = titleTextWidth + 12.0
+            
+            // Set the button frame at origin at (x, y) = (0, 0) with
+            // button width  = buttonWidth
+            // button height = kScrollMenuHeight points
+            scrollMenuButton.frame = CGRect(x: 0.0, y: 0.0, width: buttonWidth, height: kScrollMenuHeight)
+            
+            // Set the button frame with width=buttonWidth height=kScrollMenuHeight points with origin at (x, y) = (0, 0)
+            scrollMenuButton.frame = CGRect(x: 0.0, y: 0.0, width: buttonWidth, height: kScrollMenuHeight)
+            
+            // Set the button title to the stock symbol name
+            scrollMenuButton.setTitle("\(stockSymbols[i])", for: UIControl.State())
+            
+            // Set the button title color to black when the button is not selected
+            scrollMenuButton.setTitleColor(UIColor(red: 0.6471, green: 0, blue: 0.8275, alpha: 1.0), for: UIControl.State())
+            
+            // Set the button title color to red when the button is selected
+            scrollMenuButton.setTitleColor(UIColor.red, for: UIControl.State.selected)
+            
+            // Set the button to invoke the buttonPressed: method when the user taps it
+            scrollMenuButton.addTarget(self, action: #selector(StockSearchViewController.stockButtonPressed(_:)), for: .touchUpInside)
+            
+            // Add the constructed button to the list of buttons
+            listOfMenuButtons.append(scrollMenuButton)
+        }
+        
+        var sumOfButtonWidths: CGFloat = 0.0
+        
+        for j in 0 ..< listOfMenuButtons.count {
+            
+            // Obtain the obj ref to the jth button in the listOfMenuButtons array
+            let button: UIButton = listOfMenuButtons[j]
+            
+            // Set the button's frame to buttonRect
+            var buttonRect: CGRect = button.frame
+            
+            // Set the buttonRect's x coordinate value to sumOfButtonWidths
+            buttonRect.origin.x = sumOfButtonWidths
+            
+            // Set the button's frame to the newly specified buttonRect
+            button.frame = buttonRect
+            
+            // Add the button to the horizontally scrollable menu
+            scrollMenu.addSubview(button)
+            
+            // Add the width of the button to the total width
+            sumOfButtonWidths += button.frame.size.width
+        }
+        
+        // Horizontally scrollable menu's content width size = the sum of the widths of all of the buttons
+        // Horizontally scrollable menu's content height size = kScrollMenuHeight points
+        scrollMenu.contentSize = CGSize(width: sumOfButtonWidths, height: kScrollMenuHeight)
+        
+        /*******************************************************
+         * Select and show the default auto maker upon app launch
+         *******************************************************/
+        
+        // Hide left arrow
+        //        leftArrowBlack.isHidden = true
+        
+        selectedStock = stockSymbols[0]
+        
     }
     
-
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        /*
+         Content        = concatenated list of buttons
+         Content Width  = sum of all button widths, sumOfButtonWidths
+         Content Height = kScrollMenuHeight points
+         Origin         = (x, y) values of the bottom left corner of the scroll view or content
+         Sx             = Scroll View's origin x value
+         Cx             = Content's origin x value
+         contentOffset  = Sx - Cx
+         
+         Interpretation of the Arrows:
+         
+         IF scrolled all the way to the RIGHT THEN show only RIGHT arrow: indicating that the data (content) is
+         on the right hand side and therefore, the user must *** scroll to the left *** to see the content.
+         
+         IF scrolled all the way to the LEFT THEN show only LEFT arrow: indicating that the data (content) is
+         on the left hand side and therefore, the user must *** scroll to the right *** to see the content.
+         
+         5 pixels used as padding
+         */
+        print("here")
+        if scrollView.contentOffset.x <= 5 {
+            // Scrolling is done all the way to the RIGHT
+            leftArrowBlack.isHidden   = true      // Hide left arrow
+            rightArrowBlack.isHidden  = false     // Show right arrow
+        }
+        else if scrollView.contentOffset.x >= (scrollView.contentSize.width - scrollView.frame.size.width) - 5 {
+            // Scrolling is done all the way to the LEFT
+            leftArrowBlack.isHidden   = false     // Show left arrow
+            rightArrowBlack.isHidden  = true      // Hide right arrow
+        }
+        else {
+            // Scrolling is in between. Scrolling can be done in either direction.
+            leftArrowBlack.isHidden   = false     // Show left arrow
+            rightArrowBlack.isHidden  = false     // Show right arrow
+        }
+    }
+    
+    
+    
     // Instance variable holding the object reference of the TextField UI object created in the Storyboard
     @IBOutlet var stockSymbolTextField: UITextField!
     
     // dataToPass is the data object to pass to the downstream view controller
     var dataToPass = [String]()
+    
+    // This method is invoked when the Get Stock Quote button is tapped
+    @IBAction func stockButtonPressed (_ sender: UIButton) {
+        let selectedButton: UIButton = sender
+        
+        // Indicate that the button is selected
+        selectedButton.isSelected = true
+        
+        selectedStock = selectedButton.title(for: UIControl.State())!
+        
+        // Obtain the list of data values of the given company as AnyObject
+        let companyDataObtained: AnyObject? = applicationDelegate.dict_MyStocks[selectedStock] as AnyObject
+        
+        // Typecast the AnyObject to Swift array of String objects
+        var companyData = companyDataObtained! as! [String]
+        
+        companyData.append(selectedStock)
+        
+        dataToPass = companyData
+        
+        performSegue(withIdentifier: "Stock View II", sender: self)
+    }
     
     // This method is invoked when the Get Stock Quote button is tapped
     @IBAction func searchButtonTapped (_ sender: UIButton) {
@@ -322,8 +500,8 @@ class StockSearchViewController: UIViewController {
                         highestStockPrice = "None"
                     }
                 }
-
-
+                
+                
                 
                 //***************************************************
                 // Create an array containing all of the company data
@@ -414,12 +592,19 @@ class StockSearchViewController: UIViewController {
         
         if segue.identifier == "Stock Searched View" {
             
-//            // Obtain the object reference of the destination view controller
+            // Obtain the object reference of the destination view controller
             let stockSearchedViewController: StockSearchedViewController = segue.destination as! StockSearchedViewController
             
             // Pass the data object to the downstream view controller object
             stockSearchedViewController.dataPassed = dataToPass
+        } else if segue.identifier == "Stock View II" {
+            
+            // Obtain the object reference of the destination view controller
+            let myStockViewController: MyStockViewController = segue.destination as! MyStockViewController
+            
+            // Pass the data object to the downstream view controller object
+            myStockViewController.dataPassed = dataToPass
         }
     }
-
+    
 }

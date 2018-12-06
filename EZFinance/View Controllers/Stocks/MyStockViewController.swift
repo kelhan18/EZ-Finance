@@ -9,7 +9,7 @@
 import UIKit
 
 class MyStockViewController: UIViewController {
-
+    
     var dataPassed = [String]()
     
     @IBOutlet var stockNameLabel: UILabel!
@@ -17,7 +17,7 @@ class MyStockViewController: UIViewController {
     @IBOutlet var stockPriceLabel: UILabel!
     @IBOutlet var stockPriceLowLabel: UILabel!
     @IBOutlet var stockHighLabel: UILabel!
-    @IBOutlet var percentChangeLabel: UILabel!
+    @IBOutlet var amountInvestedLabel: UILabel!
     @IBOutlet var ftWeekLowLabel: UILabel!
     @IBOutlet var ftWeekHighLabel: UILabel!
     @IBOutlet var addButton: UIButton!
@@ -27,6 +27,7 @@ class MyStockViewController: UIViewController {
     @IBOutlet var ownedLabel: UILabel!
     
     var currentPrice = ""
+    var oldNumStocks = 0
     
     // Obtain the object reference to the App Delegate object
     let applicationDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -43,6 +44,7 @@ class MyStockViewController: UIViewController {
         
         stockNameLabel.text! = dataPassed[3]
         companyNameLabel.text! = dataPassed[0]
+        oldNumStocks = Int(dataPassed[1])!
         
         // Set the API URL to obtain the JSON file containing the stock quote for the stock symbol entered
         let apiUrl = "https://api.iextrading.com/1.0/stock/\(dataPassed[3])/quote"
@@ -287,10 +289,11 @@ class MyStockViewController: UIViewController {
                 stockHighLabel.text! = "Stock Price High: \(highestStockPrice)"
                 ftWeekLowLabel.text! = "52 Week Low: \(lowestStockPriceIn52Weeks)"
                 ftWeekHighLabel.text! = "52 Week High: \(highestStockPriceIn52Weeks)"
-                percentChangeLabel.text! = "Stock Percent Change: \(percentChangeInStockPrice)"
+                //                percentChangeLabel.text! = "Stock Percent Change: \(percentChangeInStockPrice)"
                 priceChangeLabel.text! = "Stock Price Change: \(changeInStockPrice)"
                 marginLabel.text! = "Profit Margin: \(margin)"
                 ownedLabel.text! = "Stocks Owned: \(numStocks)"
+                amountInvestedLabel.text! = "Amount Invested: \(round(Double(dataPassed[2])! * 1000) / 1000)"
                 
             } catch let error as NSError {
                 
@@ -322,16 +325,17 @@ class MyStockViewController: UIViewController {
             return
         }
         
-        let oldNumStocks = dataPassed[1]
         let oldInvested = dataPassed[2]
+        var newNumStocks = Int()
+        var newInvested = Double()
         
         if (sender.tag == 1) {
             // Add
-        
+            
             //print(stockPriceLabel.text!)
             
-            let newNumStocks = Int(numStocks)! + Int(oldNumStocks)!
-            let newInvested = Double(oldInvested)! + (Double(numStocks)! * Double(currentPrice)!)
+            newNumStocks = Int(numStocks)! + Int(oldNumStocks)
+            newInvested = Double(oldInvested)! + (Double(numStocks)! * Double(currentPrice)!)
             
             let data = [compName, String(newNumStocks), String(newInvested)]
             
@@ -339,23 +343,30 @@ class MyStockViewController: UIViewController {
             
             applicationDelegate.dict_MyStocks.setObject(data, forKey: stockSymbolEntered as NSCopying)
             
-        } else if (sender.tag == 2) {
+            oldNumStocks = newNumStocks
+            
+        } else {
             // Remove
             
-            if (Double(oldNumStocks)! < Double(numStocks)!) {
+            if (Double(oldNumStocks) < Double(numStocks)!) {
                 showAlertMessage(messageHeader: "Cannot sell more stocks than you own!", messageBody: "Please enter a proper amount!")
                 return
             }
             
-            let newNumStocks = Int(oldNumStocks)! - Int(numStocks)!
-            let newInvested = Double(oldInvested)! - (Double(numStocks)! * Double(currentPrice)!)
+            newNumStocks = Int(oldNumStocks) - Int(numStocks)!
+            newInvested = Double(oldInvested)! - (Double(numStocks)! * Double(currentPrice)!)
             
             let data = [compName, String(newNumStocks), String(newInvested)]
             
             applicationDelegate.dict_MyStocks.removeObject(forKey: stockSymbolEntered as NSCopying)
             
             applicationDelegate.dict_MyStocks.setObject(data, forKey: stockSymbolEntered as NSCopying)
+            
+            oldNumStocks = newNumStocks
         }
+        
+        ownedLabel.text! = "Stocks Owned: \(newNumStocks)"
+        amountInvestedLabel.text! = "Amount Invested: \(round(newInvested * 1000) / 1000)"
     }
     
     /*
@@ -377,6 +388,28 @@ class MyStockViewController: UIViewController {
         // Present the alert controller
         present(alertController, animated: true, completion: nil)
     }
-
-
+    
+    /*
+     ------------------------
+     MARK: - IBAction Methods
+     ------------------------
+     */
+    @IBAction func keyboardDone(_ sender: UITextField) {
+        
+        // When the Text Field resigns as first responder, the keyboard is automatically removed.
+        sender.resignFirstResponder()
+    }
+    
+    @IBAction func backgroundTouch(_ sender: UIControl) {
+        /*
+         "This method looks at the current view and its subview hierarchy for the text field that is
+         currently the first responder. If it finds one, it asks that text field to resign as first responder.
+         If the force parameter is set to true, the text field is never even asked; it is forced to resign." [Apple]
+         
+         When the Text Field resigns as first responder, the keyboard is automatically removed.
+         */
+        view.endEditing(true)
+    }
+    
+    
 }

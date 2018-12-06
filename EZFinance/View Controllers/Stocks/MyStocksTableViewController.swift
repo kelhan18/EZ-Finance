@@ -9,7 +9,7 @@
 import UIKit
 
 class MyStocksTableViewController: UITableViewController {
-
+    
     // Instance variable holding the object reference of the UITableView UI object created in the Storyboard
     @IBOutlet var companyTableView: UITableView!
     
@@ -45,8 +45,25 @@ class MyStocksTableViewController: UITableViewController {
         self.clearsSelectionOnViewWillAppear = false
         
         // Set up the Edit button on the left of the navigation bar to enable editing of the table view rows
-        self.navigationItem.leftBarButtonItem = self.editButtonItem
+        self.navigationItem.rightBarButtonItem = self.editButtonItem
         
+        /*
+         allKeys returns a new array containing the dictionary’s keys as of type AnyObject.
+         Therefore, typecast the AnyObject type keys to be of type String.
+         The keys in the array are *unordered*; therefore, they need to be sorted.
+         */
+        stockSymbols = applicationDelegate.dict_MyStocks.allKeys as! [String]
+        
+        // Sort the stock symbols within itself in alphabetical order
+        stockSymbols.sort { $0 < $1 }
+    }
+    
+    /*
+     -----------------------
+     MARK: - View Life Cycle
+     -----------------------
+     */
+    override func viewDidAppear(_ animated: Bool) {
         /*
          allKeys returns a new array containing the dictionary’s keys as of type AnyObject.
          Therefore, typecast the AnyObject type keys to be of type String.
@@ -206,8 +223,8 @@ class MyStocksTableViewController: UITableViewController {
         } catch {
             showAlertMessage(messageHeader: "Symbol Unrecognized!", messageBody: "No company found for the stock symbol \(givenStockSymbol) !")
             cell.stockNameLabel.text! = givenStockSymbol
-            cell.changeLabel.text! = "Price Change: N/A"
-            cell.marginLabel.text! = "Margin: N/A"
+            cell.changeLabel.text! = "N/A"
+            cell.marginLabel.text! = "N/A"
             return cell
         }
         
@@ -297,8 +314,19 @@ class MyStocksTableViewController: UITableViewController {
                 }
                 
                 cell.stockNameLabel.text! = givenStockSymbol
-                cell.changeLabel.text! = "Price Change: \(changeInStockPrice)"
-                cell.marginLabel.text! = "Margin: \(margin)"
+                cell.changeLabel.text! = "\(changeInStockPrice)"
+                cell.marginLabel.text! = "\(margin)"
+                if Double(margin)! > 0.0 {
+                    cell.marginLabel.textColor = UIColor(red: 0, green: 0.8784, blue: 0.2196, alpha: 1.0)
+                } else {
+                    cell.marginLabel.textColor = UIColor(red: 1, green: 0, blue: 0.0157, alpha: 1.0)
+                }
+                
+                if Double(changeInStockPrice)! > 0.0 {
+                    cell.changeLabel.textColor = UIColor(red: 0, green: 0.8784, blue: 0.2196, alpha: 1.0)
+                } else {
+                    cell.changeLabel.textColor = UIColor(red: 1, green: 0, blue: 0.0157, alpha: 1.0)
+                }
                 
             } catch let error as NSError {
                 
@@ -418,21 +446,13 @@ class MyStocksTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
         
         if segue.identifier == "Show Stock Info" {
-
+            
             // Obtain the object reference of the destination view controller
             let myStockViewController: MyStockViewController = segue.destination as! MyStockViewController
-
+            
             // Pass the data object to the downstream view controller object
             myStockViewController.dataPassed = dataToPass
-
+            
         }
-//        else if segue.identifier == "Company Website" {
-//
-//            // Obtain the object reference of the destination view controller
-//            let companyWebsiteViewController: CompanyWebsiteViewController = segue.destination as! CompanyWebsiteViewController
-//
-//            // Pass the data object to the downstream view controller object
-//            companyWebsiteViewController.companyDataPassed = companyDataToPass
-//        }
     }
 }

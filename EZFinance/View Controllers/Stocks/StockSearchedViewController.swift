@@ -11,7 +11,7 @@ import UIKit
 class StockSearchedViewController: UIViewController {
     
     var dataPassed = [String]()
-
+    
     @IBOutlet var stockNameLabel: UILabel!
     @IBOutlet var companyNameLabel: UILabel!
     @IBOutlet var stockPriceLabel: UILabel!
@@ -41,10 +41,10 @@ class StockSearchedViewController: UIViewController {
      dataPassed[11] = Highest Stock Price Today
      dataPassed[12] = Lowest Stock Price Today
      */
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         stockNameLabel.text! = dataPassed[0]
         companyNameLabel.text! = dataPassed[1]
         stockPriceLabel.text! = "Stock Price: \(dataPassed[4])"
@@ -82,7 +82,7 @@ class StockSearchedViewController: UIViewController {
         
         applicationDelegate.dict_MyStocks.setObject(data, forKey: stockSymbolEntered as NSCopying)
         
-        // TODO send to table view
+        performSegue(withIdentifier: "Add To My Stocks", sender: self)
     }
     
     /*
@@ -104,5 +104,27 @@ class StockSearchedViewController: UIViewController {
         // Present the alert controller
         present(alertController, animated: true, completion: nil)
     }
-
+    
+    /*
+     ------------------------
+     MARK: - IBAction Methods
+     ------------------------
+     */
+    @IBAction func keyboardDone(_ sender: UITextField) {
+        
+        // When the Text Field resigns as first responder, the keyboard is automatically removed.
+        sender.resignFirstResponder()
+    }
+    
+    @IBAction func backgroundTouch(_ sender: UIControl) {
+        /*
+         "This method looks at the current view and its subview hierarchy for the text field that is
+         currently the first responder. If it finds one, it asks that text field to resign as first responder.
+         If the force parameter is set to true, the text field is never even asked; it is forced to resign." [Apple]
+         
+         When the Text Field resigns as first responder, the keyboard is automatically removed.
+         */
+        view.endEditing(true)
+    }
+    
 }

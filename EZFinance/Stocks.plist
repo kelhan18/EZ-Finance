@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IBM</key>
+	<array>
+		<string>International Business Machines Corporation</string>
+		<string>7</string>
+		<string>875.20</string>
+	</array>
+	<key>AAPL</key>
+	<array>
+		<string>Apple Inc.</string>
+		<string>5</string>
+		<string>842.20</string>
+	</array>
+	<key>GOOG</key>
+	<array>
+		<string>Alphabet Inc.</string>
+		<string>7</string>
+		<string>7320.25</string>
+	</array>
+	<key>MSFT</key>
+	<array>
+		<string>Microsoft Corporation</string>
+		<string>10</string>
+		<string>1082.1</string>
+	</array>
+	<key>SYN</key>
+	<array>
+		<string>Synthetic Biologics Inc.</string>
+		<string>155</string>
+		<string>109.275</string>
+	</array>
+	<key>REI</key>
+	<array>
+		<string>Ring Energy Inc.</string>
+		<string>69</string>
+		<string>486.45</string>
+	</array>
+	<key>RARE</key>
+	<array>
+		<string>Ultragenyx Pharmaceutical Inc.</string>
+		<string>28</string>
+		<string>1694.56</string>
+	</array>
+</dict>
+</plist>
