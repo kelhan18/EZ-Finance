@@ -1860,7 +1860,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stock Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rIU-pI-zHl">
-                                            <rect key="frame" x="15" y="5" width="106" height="24"/>
+                                            <rect key="frame" x="15" y="5" width="261" height="24"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="24" id="erx-xA-be0"/>
                                             </constraints>
@@ -1879,7 +1879,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Margin-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fnF-XT-IXN">
-                                            <rect key="frame" x="86" y="48" width="195" height="17"/>
+                                            <rect key="frame" x="77" y="48" width="204" height="17"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="17" id="bv8-zc-A6w"/>
                                             </constraints>
@@ -1911,15 +1911,16 @@
                                         <constraint firstItem="ySc-6r-FY1" firstAttribute="leading" secondItem="l6C-5H-D4q" secondAttribute="trailing" constant="10" id="1Hu-M3-cch"/>
                                         <constraint firstItem="l6C-5H-D4q" firstAttribute="leading" secondItem="0dP-r9-RA4" secondAttribute="leadingMargin" id="59c-zD-tE5"/>
                                         <constraint firstItem="R0W-nL-4nX" firstAttribute="leading" secondItem="0dP-r9-RA4" secondAttribute="leading" constant="16" id="7Dm-Fh-i2r"/>
+                                        <constraint firstAttribute="trailing" secondItem="rIU-pI-zHl" secondAttribute="trailing" constant="10" id="8pU-jD-LIg"/>
                                         <constraint firstItem="rIU-pI-zHl" firstAttribute="leading" secondItem="0dP-r9-RA4" secondAttribute="leading" constant="15" id="EG6-Oz-Kp1"/>
                                         <constraint firstItem="fnF-XT-IXN" firstAttribute="top" secondItem="l6C-5H-D4q" secondAttribute="bottom" constant="1" id="Gov-f4-8Ny"/>
                                         <constraint firstItem="l6C-5H-D4q" firstAttribute="top" secondItem="rIU-pI-zHl" secondAttribute="bottom" constant="1" id="NT4-nu-oVy"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="ySc-6r-FY1" secondAttribute="trailing" constant="5" id="SOW-f3-RLy"/>
                                         <constraint firstItem="rIU-pI-zHl" firstAttribute="top" secondItem="0dP-r9-RA4" secondAttribute="top" constant="5" id="Ylg-Oh-3bJ"/>
                                         <constraint firstAttribute="trailing" secondItem="fnF-XT-IXN" secondAttribute="trailing" constant="5" id="aZ3-fU-CWV"/>
-                                        <constraint firstItem="ySc-6r-FY1" firstAttribute="top" secondItem="0dP-r9-RA4" secondAttribute="topMargin" constant="19" id="dOp-08-jRs"/>
-                                        <constraint firstItem="fnF-XT-IXN" firstAttribute="leading" secondItem="R0W-nL-4nX" secondAttribute="trailing" constant="19" id="hRv-Kd-8mU"/>
+                                        <constraint firstItem="fnF-XT-IXN" firstAttribute="leading" secondItem="R0W-nL-4nX" secondAttribute="trailing" constant="10" id="hRv-Kd-8mU"/>
                                         <constraint firstItem="R0W-nL-4nX" firstAttribute="top" secondItem="l6C-5H-D4q" secondAttribute="bottom" constant="1" id="vGu-60-7D3"/>
+                                        <constraint firstItem="ySc-6r-FY1" firstAttribute="top" secondItem="rIU-pI-zHl" secondAttribute="bottom" constant="1" id="zVG-VY-gP6"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
