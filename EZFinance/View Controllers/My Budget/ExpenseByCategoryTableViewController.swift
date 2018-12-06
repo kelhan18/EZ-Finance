@@ -9,7 +9,7 @@
 import UIKit
 
 class ExpenseByCategoryTableViewController: UITableViewController {
-
+    
     let applicationDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
     
     @IBOutlet var expensesTableView: UITableView!
@@ -32,19 +32,31 @@ class ExpenseByCategoryTableViewController: UITableViewController {
         getExpenseByCategory()
         expenses.sort { $0 < $1 }
     }
-
-    func getExpenseByCategory() {
     
+    func getExpenseByCategory() {
+        
+        var newExpenses = [String]()
+        
+        for index in 0...(expenses.count-1) {
+            print(expenses[index])
+            let expenseName = expenses[index]
+            let expenseDataObtained: [String] = applicationDelegate.dict_Expense_ExpenseData["\(expenseName)"]! as! [String]
+            var currentExpense = expenseDataObtained
+            if currentExpense[1] == categoryName {
+                newExpenses.append(expenseName)
+            }
+        }
+        expenses = newExpenses
     }
     
     
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return expenses.count
@@ -84,18 +96,18 @@ class ExpenseByCategoryTableViewController: UITableViewController {
             cell.backgroundColor = OLD_LACE
         }
     }
-
     
-
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Expense Details" {
             // Obtain the object reference of the destination view controller
             let expenseDetailsViewController: ExpenseDetailsViewController = segue.destination as! ExpenseDetailsViewController
-     
+            
             expenseDetailsViewController.expenseDetails = expenseDataToPass
             expenseDetailsViewController.expenseName = expenseNameToPass
-     }
+        }
     }
-
+    
 }
 

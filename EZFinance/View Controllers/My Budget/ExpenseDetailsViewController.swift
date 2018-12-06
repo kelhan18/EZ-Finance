@@ -9,8 +9,8 @@
 import UIKit
 
 class ExpenseDetailsViewController: UIViewController {
-
-
+    
+    
     @IBOutlet var expenseNameLabel: UILabel!
     @IBOutlet var expenseCostLabel: UILabel!
     @IBOutlet var expenseLocationLabel: UILabel!
@@ -32,7 +32,6 @@ class ExpenseDetailsViewController: UIViewController {
         expenseLocationLabel.text = expenseDetails[2]
         expenseDateLabel.text = expenseDetails[3]
         
-        
     }
     
     @IBAction func viewPhoto(_ sender: UIButton) {
@@ -46,9 +45,9 @@ class ExpenseDetailsViewController: UIViewController {
             // Obtain the object reference of the destination view controller
             let expensePhotoViewController: ExpensePhotoViewController = segue.destination as! ExpensePhotoViewController
             
-            expensePhotoViewController.photo = expenseDetails[4]
+            expensePhotoViewController.photoPath = expenseDetails[4]
         }
         
     }
-
+    
 }

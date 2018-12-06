@@ -5,14 +5,14 @@
 //  Created by CS3714 on 12/4/18.
 //  Copyright © 2018 Anthony Medovar. All rights reserved.
 //
-import LocalAuthentication
+
 import UIKit
 
 class MyBudgetViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     
     let applicationDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
-
+    
     @IBOutlet var budgetAmount: UILabel!
     @IBOutlet var expensesTableView: UITableView!
     @IBOutlet var optionsSegmentedControl: UISegmentedControl!
@@ -33,11 +33,6 @@ class MyBudgetViewController: UIViewController, UITableViewDataSource, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.Authenticate { (success) in
-            print(success)
-        }
-        
         optionsSegmentedControl.selectedSegmentIndex = UISegmentedControl.noSegment
         expenses = applicationDelegate.dict_Expense_ExpenseData.allKeys as! [String]
         expenses.sort { $0 < $1 }
@@ -47,38 +42,6 @@ class MyBudgetViewController: UIViewController, UITableViewDataSource, UITableVi
         budgetAmount.text = "$\(budgetamount)"
         currentBudget = Double(budgetamount) ?? 0
         totalExpense = Double(totalExpenseFromDict) ?? 0
-    }
-    
-    //Function called in viewDidLoad(). Determine if user is properly authenticated
-    func Authenticate(completion: @escaping ((Bool) -> ())){
-        //Create a context
-        let authenticationContext = LAContext()
-        var error:NSError?
-        
-        //Check if device have Biometric sensor
-        let isValidSensor : Bool = authenticationContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error)
-        
-        //If it has biometric sensor, check to see if authentication passes
-        if isValidSensor {
-            authenticationContext.evaluatePolicy(
-                .deviceOwnerAuthenticationWithBiometrics,
-                localizedReason: "Touch / Face ID authentication",
-                reply: { [unowned self] (success, error) -> Void in
-                    
-                    if(success) {
-                        //Touch/Face ID success, return true
-                        completion(true)
-                    } else {
-                        //Touch/Face ID fail, return false and error message
-                        if error != nil {
-                            self.showAlertMessage(messageHeader: "Error", messageBody: "Encountered Error")
-                        }
-                        completion(false)
-                    }
-            })
-        } else {
-            self.showAlertMessage(messageHeader: "Error", messageBody: "Encountered Error")
-        }
     }
     
     
@@ -118,14 +81,14 @@ class MyBudgetViewController: UIViewController, UITableViewDataSource, UITableVi
         let fixedString = String(format: "%.2f", currentBudget)
         
         budgetAmount.text = "$\(fixedString)"
-
+        
         applicationDelegate.myBudget.setObject(fixedString, forKey: (("budget" as NSCopying) as! String as NSCopying))
-
+        
         expenses = applicationDelegate.dict_Expense_ExpenseData.allKeys as! [String]
         expenses.sort { $0 < $1 }
         expensesTableView.reloadData()
     }
-
+    
     /*
      ---------------------------
      MARK: - Unwind Segue Method
@@ -139,15 +102,16 @@ class MyBudgetViewController: UIViewController, UITableViewDataSource, UITableVi
         
         let newExpenseViewController: NewExpenseViewController = segue.source as! NewExpenseViewController
         
-        let expenseName = newExpenseViewController.expenseNameTextfield.text!
+        let expenseName = newExpenseViewController.expenseNameLabel.text!
         let expenseCost = newExpenseViewController.expenseCostTextField.text!
         let expenseLocation = newExpenseViewController.expenseLocationTextField.text!
         let expenseCategory = newExpenseViewController.category
+        let expensePhotoPath = newExpenseViewController.expensePhotoPath
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "mm-dd-yyyy"
         let exenseDateObtained: String = dateFormatter.string(from: newExpenseViewController.expenseDatePicker.date)
         //Get the added fields
-
+        
         let characterset = CharacterSet(charactersIn: "0123456789.")
         if expenseCost.rangeOfCharacter(from: characterset.inverted) != nil {
             showAlertMessage(messageHeader: "Expense Cost must be a number", messageBody: "Please enter a valid positive number!")
@@ -157,7 +121,7 @@ class MyBudgetViewController: UIViewController, UITableViewDataSource, UITableVi
         if expenseName.isEmpty {
             showAlertMessage(messageHeader: "Empty Expense Name", messageBody: "Please enter an Expense Name!")
             return
-        } else if expenseCost.isEmpty || Int(expenseCost)! <= 0{
+        } else if expenseCost.isEmpty || Double(expenseCost)! <= 0{
             showAlertMessage(messageHeader: "Empty Expense Cost", messageBody: "Please enter an Expense Cost!")
             return
         } else if expenseLocation.isEmpty {
@@ -165,7 +129,13 @@ class MyBudgetViewController: UIViewController, UITableViewDataSource, UITableVi
             return
         }
         
-        let expenseData: [String] = [expenseCost, expenseCategory, expenseLocation, exenseDateObtained, "photo.png"]
+        var expenseData: [String] = []
+        if expensePhotoPath == "" {
+            expenseData = [expenseCost, expenseCategory, expenseLocation, exenseDateObtained, "photo.png"]
+        } else {
+            expenseData = [expenseCost, expenseCategory, expenseLocation, exenseDateObtained, expensePhotoPath]
+        }
+        
         
         applicationDelegate.dict_Expense_ExpenseData.setValue(expenseData, forKey: (expenseName as NSCopying) as! String)
         
@@ -174,6 +144,9 @@ class MyBudgetViewController: UIViewController, UITableViewDataSource, UITableVi
         
         let fixedString1 = String(format: "%.2f", totalExpense)
         let fixedString2 = String(format: "%.2f", currentBudget)
+        print(currentBudget)
+        print(fixedString2)
+        
         budgetAmount.text = "$\(fixedString2)"
         print(applicationDelegate.myBudget)
         applicationDelegate.myBudget.setObject(fixedString2, forKey: (("budget" as NSCopying) as! String as NSCopying))
@@ -249,7 +222,7 @@ class MyBudgetViewController: UIViewController, UITableViewDataSource, UITableVi
     
     override func viewWillAppear(_ animated: Bool) {
         optionsSegmentedControl.selectedSegmentIndex = UISegmentedControl.noSegment
-
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {

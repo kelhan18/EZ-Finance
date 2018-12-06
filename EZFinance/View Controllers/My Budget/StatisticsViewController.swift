@@ -9,7 +9,7 @@
 import UIKit
 
 class StatisticsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+    
     @IBOutlet var totalExpenseLabel: UILabel!
     @IBOutlet var categoryTableView: UITableView!
     
@@ -26,12 +26,12 @@ class StatisticsViewController: UIViewController, UITableViewDataSource, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         let fixedString = String(format: "%.2f", totalExpense)
         totalExpenseLabel.text = "$\(fixedString)"
         
-        categories = ["Grocery", "Utilities", "Mortgage", "Health & Fitness", "Entertainment", "Gifts & Donations", "Transportation", "Miscellaneous", "Savings", "Rent"]
-        
+        categories = ["Grocery", "Utilities", "Mortgage", "Health & Fitness", "Entertainment", "Gifts & Donations", "Transportation", "Miscellaneous", "Savings", "Rent", "Travel", "Food", "Clothing"]
+        categories.sort()
         // Do any additional setup after loading the view.
     }
     
@@ -42,7 +42,7 @@ class StatisticsViewController: UIViewController, UITableViewDataSource, UITable
             cell.backgroundColor = OLD_LACE
         }
     }
-
+    
     // Informs the table view delegate that the specified row is selected.
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
@@ -64,12 +64,12 @@ class StatisticsViewController: UIViewController, UITableViewDataSource, UITable
         let cell: CategoryTableViewCell = tableView.dequeueReusableCell(withIdentifier: "Expense Category Cell", for: indexPath) as! CategoryTableViewCell
         let rowNumber = (indexPath as NSIndexPath).row
         let categoryName = categories[rowNumber]
-       
+        
         cell.categoryLabel!.text = categoryName
         return cell
     }
     
-
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
         
@@ -83,5 +83,5 @@ class StatisticsViewController: UIViewController, UITableViewDataSource, UITable
         
     }
     
-
+    
 }

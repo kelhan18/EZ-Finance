@@ -2,7 +2,95 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Walmart Trip</key>
+	<key>Target</key>
+	<array>
+		<string>40</string>
+		<string>Grocery</string>
+		<string>Blacksburg</string>
+		<string>10-01-2017</string>
+		<string>photo.png</string>
+	</array>
+	<key>Europe summer trip 2018</key>
+	<array>
+		<string>15000</string>
+		<string>Travel</string>
+		<string>Blacksburg</string>
+		<string>06-17-2018</string>
+		<string>photo.png</string>
+	</array>
+	<key>New Boat</key>
+	<array>
+		<string>777</string>
+		<string>Miscellaneous</string>
+		<string>Blacksburg</string>
+		<string>10-01-2017</string>
+		<string>photo.png</string>
+	</array>
+	<key>Lunch with sister</key>
+	<array>
+		<string>50</string>
+		<string>Food</string>
+		<string>Blacksburg</string>
+		<string>07-31-2016</string>
+		<string>photo.png</string>
+	</array>
+	<key>Gym Membership</key>
+	<array>
+		<string>25</string>
+		<string>Health &amp; Fitness</string>
+		<string>Blacksburg</string>
+		<string>10-01-2017</string>
+		<string>photo.png</string>
+	</array>
+	<key>Car fuel</key>
+	<array>
+		<string>60</string>
+		<string>Transportation</string>
+		<string>Blacksburg</string>
+		<string>10-01-2017</string>
+		<string>photo.png</string>
+	</array>
+	<key>Dinner with Family</key>
+	<array>
+		<string>140</string>
+		<string>Food</string>
+		<string>Blacksburg</string>
+		<string>02-01-2018</string>
+		<string>photo.png</string>
+	</array>
+	<key>Trip to France</key>
+	<array>
+		<string>9000</string>
+		<string>Travel</string>
+		<string>Blacksburg</string>
+		<string>10-01-2017</string>
+		<string>photo.png</string>
+	</array>
+	<key>Utilities</key>
+	<array>
+		<string>320</string>
+		<string>Utilities</string>
+		<string>Blacksburg</string>
+		<string>10-01-2017</string>
+		<string>photo.png</string>
+	</array>
+	<key>Rent (11/20)</key>
+	<array>
+		<string>480</string>
+		<string>Rent</string>
+		<string>Blacksburg</string>
+		<string>11-20-2017</string>
+		<string>movieTicket.png</string>
+	</array>
+	<key>Mall Shopping</key>
+	<array>
+		<string>670</string>
+		<string>Clothing</string>
+		<string>Arlington, VA</string>
+		<string>11-28-2018</string>
+		<string>clothes.png</string>
+	</array>
+	<key>Walmart</key>
 	<array>
 		<string>80</string>
 		<string>Grocery</string>
