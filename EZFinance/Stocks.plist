@@ -44,5 +44,41 @@
 		<string>28</string>
 		<string>1694.56</string>
 	</array>
+	<key>AAN</key>
+	<array>
+		<string>Aaron&apos;s Inc</string>
+		<string>12</string>
+		<string>463.44</string>
+	</array>
+	<key>IDT</key>
+	<array>
+		<string>IDT Corp</string>
+		<string>18</string>
+		<string>184.14</string>
+	</array>
+	<key>QSR</key>
+	<array>
+		<string>Restaurant Brands International</string>
+		<string>23</string>
+		<string>1363.90</string>
+	</array>
+	<key>LIN</key>
+	<array>
+		<string>Linde Plc</string>
+		<string>14</string>
+		<string>2159.22</string>
+	</array>
+	<key>M</key>
+	<array>
+		<string>Macy&apos;s Inc</string>
+		<string>13</string>
+		<string>470.60</string>
+	</array>
+	<key>WOR</key>
+	<array>
+		<string>Worthington Industries</string>
+		<string>21</string>
+		<string>872.97</string>
+	</array>
 </dict>
 </plist>

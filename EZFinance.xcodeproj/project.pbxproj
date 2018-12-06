@@ -21,7 +21,7 @@
 		419A9B3321B8A78E00083B1D /* ExpenseList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 419A9B3121B8A78E00083B1D /* ExpenseList.plist */; };
 		419A9B3421B8A78E00083B1D /* Budget.plist in Resources */ = {isa = PBXBuildFile; fileRef = 419A9B3221B8A78E00083B1D /* Budget.plist */; };
 		419A9B3621B8A81D00083B1D /* SpeechToTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419A9B3521B8A81D00083B1D /* SpeechToTextViewController.swift */; };
-		419A9B3A21B8AD7800083B1D /* Stocks.plist in Resources */ = {isa = PBXBuildFile; fileRef = 419A9B3921B8AD7700083B1D /* Stocks.plist */; };
+		419A9B4021B8BE8900083B1D /* Stocks.plist in Resources */ = {isa = PBXBuildFile; fileRef = 419A9B3F21B8BE8900083B1D /* Stocks.plist */; };
 		B74378EF21B70437007B6EE0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74378EE21B70437007B6EE0 /* HomeViewController.swift */; };
 		B74378F321B70B81007B6EE0 /* MyBudgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74378F221B70B81007B6EE0 /* MyBudgetViewController.swift */; };
 		B74378F521B70B8C007B6EE0 /* NewExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74378F421B70B8C007B6EE0 /* NewExpenseViewController.swift */; };
@@ -57,7 +57,7 @@
 		419A9B3121B8A78E00083B1D /* ExpenseList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ExpenseList.plist; sourceTree = "<group>"; };
 		419A9B3221B8A78E00083B1D /* Budget.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Budget.plist; sourceTree = "<group>"; };
 		419A9B3521B8A81D00083B1D /* SpeechToTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechToTextViewController.swift; sourceTree = "<group>"; };
-		419A9B3921B8AD7700083B1D /* Stocks.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Stocks.plist; sourceTree = "<group>"; };
+		419A9B3F21B8BE8900083B1D /* Stocks.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Stocks.plist; sourceTree = "<group>"; };
 		B74378EE21B70437007B6EE0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B74378F221B70B81007B6EE0 /* MyBudgetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBudgetViewController.swift; sourceTree = "<group>"; };
 		B74378F421B70B8C007B6EE0 /* NewExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewExpenseViewController.swift; sourceTree = "<group>"; };
@@ -191,7 +191,7 @@
 				B7B816B9219222CD0041E0BC /* LaunchScreen.storyboard */,
 				B7B816BC219222CD0041E0BC /* Info.plist */,
 				419A9B3221B8A78E00083B1D /* Budget.plist */,
-				419A9B3921B8AD7700083B1D /* Stocks.plist */,
+				419A9B3F21B8BE8900083B1D /* Stocks.plist */,
 				419A9B3121B8A78E00083B1D /* ExpenseList.plist */,
 			);
 			path = EZFinance;
@@ -275,8 +275,8 @@
 				B7B816BB219222CD0041E0BC /* LaunchScreen.storyboard in Resources */,
 				B7B816B8219222CD0041E0BC /* Assets.xcassets in Resources */,
 				B7B816B6219222CD0041E0BC /* Main.storyboard in Resources */,
+				419A9B4021B8BE8900083B1D /* Stocks.plist in Resources */,
 				419A9B3421B8A78E00083B1D /* Budget.plist in Resources */,
-				419A9B3A21B8AD7800083B1D /* Stocks.plist in Resources */,
 				419A9B3321B8A78E00083B1D /* ExpenseList.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
